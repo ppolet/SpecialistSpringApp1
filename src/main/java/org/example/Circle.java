@@ -7,7 +7,7 @@ public class Circle extends GraphObject{
     public Circle(Coords coords, int radius, String color) {
         this.coords = coords;
         this.radius = radius;
-        this.color = color;
+        setColor(color);
     }
 
     @Override

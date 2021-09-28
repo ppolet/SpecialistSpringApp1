@@ -5,7 +5,7 @@ public class Point extends GraphObject{
 
     public Point(Coords coords, String color) {
         this.coords = coords;
-        this.color = color;
+        setColor(color);
     }
 
     @Override

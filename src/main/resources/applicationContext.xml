@@ -71,6 +71,14 @@
         <constructor-arg ref="coordsBean2"/>
         <constructor-arg name="color" value="Black" />
     </bean>
+    <bean id="lineBean"
+          class="org.example.Line"
+          scope="singleton"
+    >
+        <constructor-arg name="coords1" ref="coordsBean1"/>
+        <constructor-arg name="coords2" ref="coordsBean2"/>
+        <constructor-arg name="color" value="Rose" />
+    </bean>
     <bean id="graphStationBean"
           class="org.example.GraphStation">
           <property name="graphObjectList">
@@ -80,6 +88,7 @@
                   <ref bean="circleBean2" />
                   <ref bean="circleBean3" />
                   <ref bean="pointBean2" />
+                  <ref bean="lineBean" />
               </list>
           </property>
     </bean>
