@@ -1,7 +1,7 @@
 package org.example;
 
 public abstract class GraphObject {
-    private String color;
+    String color;
 
     public String getColor() {
         return color;

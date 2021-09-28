@@ -15,30 +15,71 @@
    		http://www.springframework.org/schema/aop/spring-aop.xsd
         ">
 
-    <bean id="coordsBean"
+    <bean id="coordsBean1"
           class="org.example.Coords"
           scope="prototype">
+        <constructor-arg index="0" value="15"/>
+        <constructor-arg index="1" value="18"/>
     </bean>
-    <bean id="circleBean"
+    <bean id="coordsBean2"
+          class="org.example.Coords"
+          scope="prototype">
+        <constructor-arg index="0" value="25"/>
+        <constructor-arg index="1" value="28"/>
+    </bean>
+    <bean id="coordsBean3"
+          class="org.example.Coords"
+          scope="prototype">
+        <constructor-arg index="0" value="35"/>
+        <constructor-arg index="1" value="38"/>
+    </bean>
+    <bean id="circleBean1"
           class="org.example.Circle"
           scope="prototype"
-          >
-        <constructor-arg index="0" ref="coordsBean"/>
+    >
+        <constructor-arg index="0" ref="coordsBean1"/>
         <constructor-arg index="1" value="10"/>
-        <property name=""
+        <constructor-arg name="color" value="Red" />
     </bean>
-    <bean id="pointBean"
+    <bean id="circleBean2"
+          class="org.example.Circle"
+          scope="prototype"
+    >
+        <constructor-arg index="0" ref="coordsBean2"/>
+        <constructor-arg index="1" value="20"/>
+        <constructor-arg name="color" value="Blue" />
+    </bean>
+    <bean id="circleBean3"
+          class="org.example.Circle"
+          scope="prototype"
+    >
+        <constructor-arg index="0" ref="coordsBean3"/>
+        <constructor-arg index="1" value="30"/>
+        <constructor-arg name="color" value="White" />
+    </bean>
+    <bean id="pointBean1"
           class="org.example.Point"
           scope="prototype"
-          >
-        <constructor-arg ref="coordsBean"/>
+    >
+        <constructor-arg ref="coordsBean1"/>
+        <constructor-arg name="color" value="Yellow" />
+    </bean>
+    <bean id="pointBean2"
+          class="org.example.Point"
+          scope="prototype"
+    >
+        <constructor-arg ref="coordsBean2"/>
+        <constructor-arg name="color" value="Black" />
     </bean>
     <bean id="graphStationBean"
           class="org.example.GraphStation">
           <property name="graphObjectList">
               <list>
-                  <ref bean="circleBean" />
-                  <ref bean="pointBean" />
+                  <ref bean="circleBean1" />
+                  <ref bean="pointBean1" />
+                  <ref bean="circleBean2" />
+                  <ref bean="circleBean3" />
+                  <ref bean="pointBean2" />
               </list>
           </property>
     </bean>

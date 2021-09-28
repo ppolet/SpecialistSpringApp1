@@ -4,9 +4,10 @@ public class Circle extends GraphObject{
     private Coords coords;
     private int radius;
 
-    public Circle(Coords coords, int radius) {
+    public Circle(Coords coords, int radius, String color) {
         this.coords = coords;
         this.radius = radius;
+        this.color = color;
     }
 
     @Override
